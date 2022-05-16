@@ -14,7 +14,7 @@ jobs:
         id: teardown
         if: github.event.inputs.PRNumber != ''
         run: |
-          npx surge teardown https://debezium-debezium-github-io-preview-pr-${{ github.event.inputs.PRNumber }}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+          npx surge teardown https://hubyahya-hubyahya-github-io-preview-pr-${{ github.event.inputs.PRNumber }}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
           npx surge list --token ${{ secrets.SURGE_TOKEN }}
         continue-on-error: true
       - name: Show preview log
