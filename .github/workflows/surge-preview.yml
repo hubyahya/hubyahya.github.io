@@ -36,7 +36,7 @@ jobs:
       - name: update status comment
         uses: actions-cool/maintain-one-comment@v1.1.0
         with:
-          token: ${{ secrets.PUBLISH_GH_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           body: |
             🎊 PR Preview has been successfully built and deployed to https://debezium-debezium-github-io-preview-pr-${{ steps.pr.outputs.id }}.surge.sh
 
@@ -49,7 +49,7 @@ jobs:
         if: ${{ failure() }}
         uses: actions-cool/maintain-one-comment@v1.1.0
         with:
-          token: ${{ secrets.PUBLISH_GH_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           body: |
             😭 Deploy PR Preview failed.
             <img width="300" src="https://user-images.githubusercontent.com/507615/90250824-4e066700-de6f-11ea-8230-600ecc3d6a6b.png">
@@ -74,7 +74,7 @@ jobs:
       - name: The job failed
         uses: actions-cool/maintain-one-comment@v1.1.0
         with:
-          token: ${{ secrets.PUBLISH_GH_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           body: |
             😭 Deploy PR Preview failed.
             <img width="300" src="https://user-images.githubusercontent.com/507615/90250824-4e066700-de6f-11ea-8230-600ecc3d6a6b.png">
