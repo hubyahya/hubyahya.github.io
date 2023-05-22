@@ -30,7 +30,7 @@ export const FeaturedBlogs: React.FC = () => {
 
   return (
     <SectionLayout
-      title="Featured Posts"
+      title="Featured Postss"
       actionTitle="View all posts"
       actionLink="/blog/?type=blog"
     >
