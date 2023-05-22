@@ -17,3 +17,4 @@ jobs:
           branch: gh-pages
           folder: public/
           clean-exclude: pr-preview/
+          github-token: ${{ secrets.ACCESS_TOKEN }}
