@@ -1,21 +1,22 @@
-name: Build and Deploy
-
+# .github/workflows/pr-preview.yml
+name: Deploy PR previews
+concurrency: preview-${{ github.ref }}
 on:
-  pull_request: null
-
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-20.04
+  deploy-preview:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Install and Build
-        run: |
-          npm ci
-          npm run build
-
-      - name: Deploy
-        uses: shlinkio/deploy-preview-action@v1.0.1
+      - uses: actions/checkout@v3
+      - run: npm i && npm run build
+      - uses: rossjrw/pr-preview-action@v1
         with:
-          branch: gh-pages # The branch from where the GitHub Pages are served (defaults to preview-env)
-          folder: public # The folder where the artifacts to publish are (defaults to the project root)
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: auto
+          token: ${{ secrets.ACCESS_TOKEN }}
