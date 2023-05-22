@@ -43,7 +43,7 @@ export const FeaturedBlogs: React.FC = () => {
             subTitle={frontmatter.date}
             hasMoreButton
             chips={frontmatter.categories.split(",")}
-            buttonText={"Continue Reading"}
+            buttonText={"Continue Readings"}
           />
         ))}
       </ContentCardList>
