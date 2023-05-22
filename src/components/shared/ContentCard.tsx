@@ -113,7 +113,7 @@ export const ContentCard = ({
             {hasMoreButton && (
               <StackItem>
                 <Button variant="primary">
-                  {buttonText} <ArrowRightIcon />
+                  {buttonText} | <ArrowRightIcon />
                 </Button>
               </StackItem>
             )}
