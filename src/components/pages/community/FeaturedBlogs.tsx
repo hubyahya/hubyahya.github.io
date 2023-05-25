@@ -31,7 +31,7 @@ export const FeaturedBlogs: React.FC = () => {
   return (
     <SectionLayout
       title="Featured Posts"
-      actionTitle="View all posts"
+      actionTitle="View all postss"
       actionLink="/blog/?type=blog"
     >
       <ContentCardList>
