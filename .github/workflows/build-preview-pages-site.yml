@@ -27,4 +27,3 @@ jobs:
         uses: rossjrw/pr-preview-action@v1
         with:
           umbrella-dir: pr-preview
-          source-dir: ./public/
