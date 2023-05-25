@@ -25,3 +25,7 @@ jobs:
         uses: chvmvd/build-deploy-and-preview-action@v1.2.0
         with:
           type: gatsby
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: auto
+          token: ${{ secrets.ACCESS_TOKEN }}
