@@ -1,6 +1,7 @@
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
+  pathPrefix: `/`,
   siteMetadata: {
     title: `opendatahub.io`,
     siteUrl: `https://www.opendatahub.io`,
